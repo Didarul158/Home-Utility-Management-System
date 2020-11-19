@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewBag.Title = "OnMyWayTechnician";
+}
+
+<h2>@Session["Tesst"]</h2>
+<input type="button" value="Reached" class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Reached", "Technician", new { id=Convert.ToInt32(Session["Tesst"]).ToString()})'" />
+

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<HomeUtilityProject.Models.TECHNICIAN_TABLE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RATINGS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WORKING_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOCATION_TABLE.LOCATION_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SERVICE_TABLE.SERVICE_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RATINGS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORKING_STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOCATION_TABLE.LOCATION_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERVICE_TABLE.SERVICE_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TECHNICIAN_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TECHNICIAN_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TECHNICIAN_ID })
+        </td>
+    </tr>
+}
+
+</table>

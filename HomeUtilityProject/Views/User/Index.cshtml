@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<div class="jumbotron">
+    <h1><strong>User Panel</strong></h1>
+    <h3>@Session["Shortage"]</h3>
+    @*<input type="button" value="View Users >>" + &raquo class="btn btn-default" onclick="location.href='@Url.Action("UserList", "Admin")'" />*@
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Gass Appliacnces</h2>
+        <p>
+         @* @Session["GassServiceServed"] Services Served*@
+        </p>
+        <p> <input type="button" value="Call for Technician >>" + &raquo class="btn btn-default" onclick="location.href='@Url.Action("Services", "User",new { id = 1 })'" /></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Electical Appliacnces</h2>
+       @* <p>@Session["ElectricalServiceServed"] Services Served</p>*@
+        <p> <input type="button" value="Call for Technician >>" + &raquo class="btn btn-default" onclick="location.href='@Url.Action("Services", "User",new { id = 3 })'" /></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Water Appliacnces</h2>
+        @*<p>@Session["WaterServiceServed"] Services Served</p>*@
+        <p> <input type="button" value="Call for Technician >>" + &raquo class="btn btn-default" onclick="location.href='@Url.Action("Services", "User",new { id = 2 })'" /></p>
+    </div>
+</div>

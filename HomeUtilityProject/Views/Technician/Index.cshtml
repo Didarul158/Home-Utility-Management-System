@@ -1,0 +1,67 @@
+﻿@model IEnumerable<HomeUtilityProject.Models.ORDER_TABLE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.ses</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_TABLE.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SERVICE_TABLE.SERVICE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REQUESTED_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CALCULATED_WAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WORKING_STATUS)
+        </th>
+
+
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_TABLE.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERVICE_TABLE.SERVICE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REQUESTED_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CALCULATED_WAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORKING_STATUS)
+        </td>
+
+
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+
+            <input type="button" value="Accept" class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Accept", "Technician",new { id = item.ID })'" />
+            <input type="button" value="Decline" class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Decline", "Technician",new { id = item.ID })'" />
+
+        </td>
+    </tr>
+}
+
+</table>

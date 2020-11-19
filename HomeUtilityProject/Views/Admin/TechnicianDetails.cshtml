@@ -1,0 +1,110 @@
+﻿@model HomeUtilityProject.Models.TECHNICIAN_TABLE
+
+@{
+    ViewBag.Title = "TechnicianDetails";
+}
+
+
+<div class="jumbotron">
+    <h1><b>@Html.DisplayFor(model => model.NAME)</b></h1>
+    <div class="row">
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.EMAIL)</b></h3>
+            <p>
+                @Html.DisplayFor(model => model.EMAIL)
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.PHONE)</b></h3>
+            <p> @Html.DisplayFor(model => model.EMAIL)</p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.RATINGS)</b></h3>
+            <p>@Html.DisplayFor(model => model.RATINGS)&#x02606;</p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.LOCATION_TABLE.LOCATION_NAME)</b></h3>
+            <p>@Html.DisplayFor(model => model.LOCATION_TABLE.LOCATION_NAME)</p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.SERVICE_TABLE.SERVICE_NAME)</b></h3>
+            <p>@Html.DisplayFor(model => model.SERVICE_TABLE.SERVICE_NAME)</p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.STATUS)</b></h3>
+            <p>@Html.DisplayFor(model => model.STATUS)</p>
+        </div>
+    </div>
+
+</div>
+<center><h2>Sevices Served This Year</h2></center>
+<hr/>
+<div class="row">
+    <div class="col-md-2">
+        <h4>January</h4>
+        <p>
+            @Session["ServedInJanuary"] Services Served
+        </p>
+    </div>
+    <div class="col-md-2">
+        <h4>February</h4>
+        <p>
+            @Session["ServedInFebruary"]  Services Served
+        </p>
+    </div>
+    <div class="col-md-2">
+        <h4>March</h4>
+        <p>@Session["ServedInMarch"] Services Served</p>
+    </div>
+    <div class="col-md-2">
+        <h4>April</h4>
+        <p>@Session["ServedInApril"]  Services Served</p>
+    </div>
+    <div class="col-md-2">
+        <h4>May</h4>
+        <p>@Session["ServedInMay"]  Services Served</p>
+    </div>
+    <div class="col-md-2">
+        <h4>June</h4>
+        <p>@Session["ServedInJune"] Services Served</p>
+    </div>
+    <div class="col-md-2">
+        <h4>July</h4>
+        <p>@Session["ServedInJuly"] Services Served</p>
+    </div>
+    <div class="col-md-2">
+        <h4>August</h4>
+        <p color="Red">@Session["ServedInAugust"] Services Served</p>
+    </div>
+    <div class="col-md-2">
+        <h4>September</h4>
+        <p>@Session["ServedInSeptember"] Services Served</p>
+    </div>
+    <div class="col-md-2">
+        <h4>October</h4>
+        <p>@Session["ServedInOctober"]  Services Served</p>
+    </div>
+    <div class="col-md-2">
+        <h4>November</h4>
+        <p>@Session["ServedInNovember"] Services Served</p>
+    </div>
+   
+    <div class="col-md-2">
+        <h4>Report</h4>
+        <input type="button" value="Go Graphically >>" class="btn btn-default" onclick="location.href='@Url.Action("YearlyReport", "Admin")'" />
+
+    </div>
+
+</div>
+
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TECHNICIAN_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

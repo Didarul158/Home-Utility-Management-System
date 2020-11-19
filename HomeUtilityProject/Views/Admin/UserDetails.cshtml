@@ -1,0 +1,70 @@
+﻿@model HomeUtilityProject.Models.USER_TABLE
+
+@{
+    ViewBag.Title = "UserDetails";
+}
+
+<h2>UserDetails</h2>
+
+<div class="jumbotron">
+    <h1><b>@Html.DisplayFor(model => model.NAME)</b></h1>
+    <div class="row">
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.EMAIL)</b></h3>
+            <p>
+                @Html.DisplayFor(model => model.EMAIL)
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.PHONE)</b></h3>
+            <p> @Html.DisplayFor(model => model.EMAIL)</p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.RATINGS)</b></h3>
+            <p>@Html.DisplayFor(model => model.RATINGS)&#x02606;</p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.LOCATION_TABLE.LOCATION_NAME)</b></h3>
+            <p>@Html.DisplayFor(model => model.LOCATION_TABLE.LOCATION_NAME)</p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.ADDRESS)</b></h3>
+            <p>@Html.DisplayFor(model => model.ADDRESS)</p>
+        </div>
+        <div class="col-md-4">
+            <h3><b>@Html.DisplayNameFor(model => model.STATUS)</b></h3>
+            <p>@Html.DisplayFor(model => model.STATUS)</p>
+        </div>
+    </div>
+
+</div>
+
+
+<center><h2>Sevices Received</h2></center>
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        <h4>Gass Appliace</h4>
+        <p>
+            @Session["GassService"] Services Received
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h4>Electrical Appliances</h4>
+        <p>
+            @Session["ElectricService"]  Services Received
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h4>Water Appliances</h4>
+        <p>@Session["WaterService"] Services Received</p>
+    </div>
+   
+
+    <div class="col-md-2">
+        <h4>Report</h4>
+        <input type="button" value="Go Graphically >>" class="btn btn-default" onclick="location.href='@Url.Action("ReceivedReport", "Admin")'" />
+
+    </div>
+
+</div>

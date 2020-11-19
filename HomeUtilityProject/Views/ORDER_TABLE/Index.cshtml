@@ -1,0 +1,105 @@
+﻿@model IEnumerable<HomeUtilityProject.Models.ORDER_TABLE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.REQUESTED_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FINISHED_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WORKING_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CALCULATED_WAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NET_WAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROMO_TABLE.PROMO_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SERVICE_TABLE.SERVICE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TECHNICIAN_TABLE.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_TABLE.NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.REQUESTED_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FINISHED_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORKING_STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CALCULATED_WAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NET_WAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROMO_TABLE.PROMO_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERVICE_TABLE.SERVICE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TECHNICIAN_TABLE.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_TABLE.NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

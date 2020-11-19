@@ -1,0 +1,66 @@
+﻿@model IEnumerable<HomeUtilityProject.Models.TECHNICIAN_TABLE>
+
+@{
+    ViewBag.Title = "TechList";
+}
+
+<h2>Technicians</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RATINGS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOCATION_TABLE.LOCATION_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SERVICE_TABLE.SERVICE_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RATINGS)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOCATION_TABLE.LOCATION_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERVICE_TABLE.SERVICE_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("View", "TechnicianDetails", new { id=item.TECHNICIAN_ID })
+        </td>
+    </tr>
+}
+
+</table>

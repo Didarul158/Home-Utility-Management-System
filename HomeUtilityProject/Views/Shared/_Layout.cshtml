@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    @{
+                        if (Session["LoginSession"]?.ToString() == "User")
+                        {
+                            @Html.ActionLink("Find Technician", "Index", "User", new { area = "" }, new { @class = "navbar-brand" })
+                            <li>@Html.ActionLink("Profile", "Details", "User", new { id = Convert.ToInt32(Session["UserSessionId"].ToString()) },null)</li>
+                            <li>@Html.ActionLink("Order History", "History", "User")</li>
+                            <li>@Html.ActionLink("Offers", "Promos", "User")</li>
+                            <li>@Html.ActionLink("Logout", "Logout", "User")</li>
+                        }
+                        else if (Session["LoginSession"]?.ToString() == "Technician")
+                        {
+                            @Html.ActionLink("User Calls", "Index", "Technician", new { area = "" }, new { @class = "navbar-brand" })
+                            <li>@Html.ActionLink("Profile", "Profile", "Technician")</li>
+                            <li>@Html.ActionLink("Service History", "History", "Technician")</li>
+                            <li>@Html.ActionLink("Offers", "Promos", "Technician")</li>
+                            <li>@Html.ActionLink("Logout", "Logout", "Technician")</li>
+
+                        }
+
+                        else if (Session["LoginSession"]?.ToString() == "Admin")
+                        {
+                            <li>@Html.ActionLink("Dashboard", "Index", "Technician")</li>
+                            <li>@Html.ActionLink("Log Out", "Logout", "Technician")</li>
+                        }
+
+
+                        else if (Session["LoginSession"]?.ToString() == "Home")
+                        {
+                            @Html.ActionLink("Home Utility", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                            <li>@Html.ActionLink("Signup", "UserSignup", "Home") </li>
+                            <li> @Html.ActionLink("Join Our Technician Team!", "TechnicianSignup", "Home") </li>
+                            <li> @Html.ActionLink("Login", "Login", "Home") </li>
+
+                        }
+
+                    }
+
+                    //
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; Home Utlity Services Since @DateTime.Now.Year </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

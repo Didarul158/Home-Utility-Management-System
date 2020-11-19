@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "YearlyReport";
+}
+
+<h2>YearlyReport</h2>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <title>Column Chart</title>
+</head>
+<body>
+    <div id="chartContainer"></div>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2",
+                animationEnabled: true,
+                title: {
+                    text: "Montly wise Report "
+                },
+                data: [
+                {
+                    type: "column",
+                    dataPoints: [
+                        { y: @Convert.ToInt32(Session["GassService"]), label: "Gass" },
+                        { y: @Convert.ToInt32(Session["ElectricService"]), label: "Electric" },
+                        { y: @Convert.ToInt32(Session["WaterService"]), label: "Water" }
+
+
+                         //{ y: 3, label: "January" },
+                         //{ y: 7, label: "February" },
+                         //{ y: 10, label: "March" },
+                         //{ y: 17, label: "April" },
+                         //{ y: 2, label: "May" },
+                         //{ y: 0, label: "June" },
+                         //{ y: 16, label: "July" },
+                         //{ y: 12, label: "August" },
+                         //{ y: 5, label: "September" },
+                         //{ y: 3, label: "October " },
+                         //{ y: 19, label: "November" }
+                    ]
+                }
+                ]
+            });
+            chart.render();
+        };
+    </script>
+
+</body>
+</html>		

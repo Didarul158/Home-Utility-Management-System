@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HOMEUTILITYDATABASEModelStoreContainer" CdmEntityContainer="HOMEUTILITYDATABASEEntities1">
+    <EntitySetMapping Name="ADMIN_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.ADMIN_TABLE">
+        <MappingFragment StoreEntitySet="ADMIN_TABLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOCATION_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.LOCATION_TABLE">
+        <MappingFragment StoreEntitySet="LOCATION_TABLE">
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGIN_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.LOGIN_TABLE">
+        <MappingFragment StoreEntitySet="LOGIN_TABLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.ORDER_TABLE">
+        <MappingFragment StoreEntitySet="ORDER_TABLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TECHNICIAN_ID" ColumnName="TECHNICIAN_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="SERVICE_ID" ColumnName="SERVICE_ID" />
+          <ScalarProperty Name="REQUESTED_TIME" ColumnName="REQUESTED_TIME" />
+          <ScalarProperty Name="FINISHED_TIME" ColumnName="FINISHED_TIME" />
+          <ScalarProperty Name="WORKING_STATUS" ColumnName="WORKING_STATUS" />
+          <ScalarProperty Name="PROMO_ID" ColumnName="PROMO_ID" />
+          <ScalarProperty Name="CALCULATED_WAGE" ColumnName="CALCULATED_WAGE" />
+          <ScalarProperty Name="NET_WAGE" ColumnName="NET_WAGE" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+          <ScalarProperty Name="FLAG_3" ColumnName="FLAG_3" />
+          <ScalarProperty Name="FLAG_4" ColumnName="FLAG_4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROMO_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.PROMO_TABLE">
+        <MappingFragment StoreEntitySet="PROMO_TABLE">
+          <ScalarProperty Name="PROMO_ID" ColumnName="PROMO_ID" />
+          <ScalarProperty Name="PROMO_NAME" ColumnName="PROMO_NAME" />
+          <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+          <ScalarProperty Name="PURPOSE" ColumnName="PURPOSE" />
+          <ScalarProperty Name="EXPIRED_DATE" ColumnName="EXPIRED_DATE" />
+          <ScalarProperty Name="TIMES" ColumnName="TIMES" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICE_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.SERVICE_TABLE">
+        <MappingFragment StoreEntitySet="SERVICE_TABLE">
+          <ScalarProperty Name="SERVICE_ID" ColumnName="SERVICE_ID" />
+          <ScalarProperty Name="SERVICE_NAME" ColumnName="SERVICE_NAME" />
+          <ScalarProperty Name="SERVICE_COST" ColumnName="SERVICE_COST" />
+          <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TECHNICIAN_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.TECHNICIAN_TABLE">
+        <MappingFragment StoreEntitySet="TECHNICIAN_TABLE">
+          <ScalarProperty Name="TECHNICIAN_ID" ColumnName="TECHNICIAN_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="SERVICE_ID" ColumnName="SERVICE_ID" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="RATINGS" ColumnName="RATINGS" />
+          <ScalarProperty Name="WORKING_STATUS" ColumnName="WORKING_STATUS" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.USER_TABLE">
+        <MappingFragment StoreEntitySet="USER_TABLE">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="RATINGS" ColumnName="RATINGS" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USED_EMAIL_TABLE">
+      <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.USED_EMAIL_TABLE">
+        <MappingFragment StoreEntitySet="USED_EMAIL_TABLE">
+          <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+          <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

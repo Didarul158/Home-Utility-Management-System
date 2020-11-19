@@ -1,0 +1,112 @@
+﻿@model HomeUtilityProject.Models.TECHNICIAN_TABLE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TECHNICIAN_TABLE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RATINGS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RATINGS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKING_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKING_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FLAG_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FLAG_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FLAG_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FLAG_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOCATION_TABLE.LOCATION_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOCATION_TABLE.LOCATION_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SERVICE_TABLE.SERVICE_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERVICE_TABLE.SERVICE_NAME)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HOMEUTILITYDATABASEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMIN_TABLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_1" Type="int" Nullable="false" />
+          <Property Name="FLAG_2" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOCATION_TABLE">
+          <Key>
+            <PropertyRef Name="LOCATION_ID" />
+          </Key>
+          <Property Name="LOCATION_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOCATION_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_1" Type="int" Nullable="false" />
+          <Property Name="FLAG_2" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOGIN_TABLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_1" Type="int" Nullable="false" />
+          <Property Name="FLAG_2" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORDER_TABLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TECHNICIAN_ID" Type="int" Nullable="false" />
+          <Property Name="USER_ID" Type="int" Nullable="false" />
+          <Property Name="SERVICE_ID" Type="int" Nullable="false" />
+          <Property Name="REQUESTED_TIME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FINISHED_TIME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="WORKING_STATUS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PROMO_ID" Type="int" Nullable="false" />
+          <Property Name="CALCULATED_WAGE" Type="int" Nullable="false" />
+          <Property Name="NET_WAGE" Type="int" Nullable="false" />
+          <Property Name="FLAG_1" Type="int" Nullable="false" />
+          <Property Name="FLAG_2" Type="int" Nullable="false" />
+          <Property Name="FLAG_3" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_4" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROMO_TABLE">
+          <Key>
+            <PropertyRef Name="PROMO_ID" />
+          </Key>
+          <Property Name="PROMO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROMO_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DISCOUNT" Type="int" Nullable="false" />
+          <Property Name="PURPOSE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EXPIRED_DATE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TIMES" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_1" Type="int" Nullable="false" />
+          <Property Name="FLAG_2" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SERVICE_TABLE">
+          <Key>
+            <PropertyRef Name="SERVICE_ID" />
+          </Key>
+          <Property Name="SERVICE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERVICE_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SERVICE_COST" Type="int" Nullable="false" />
+          <Property Name="DISCOUNT" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_1" Type="int" Nullable="false" />
+          <Property Name="FLAG_2" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TECHNICIAN_TABLE">
+          <Key>
+            <PropertyRef Name="TECHNICIAN_ID" />
+          </Key>
+          <Property Name="TECHNICIAN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SERVICE_ID" Type="int" Nullable="false" />
+          <Property Name="PHONE" Type="int" Nullable="false" />
+          <Property Name="RATINGS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="WORKING_STATUS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LOCATION_ID" Type="int" Nullable="false" />
+          <Property Name="FLAG_1" Type="int" Nullable="false" />
+          <Property Name="FLAG_2" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USED_EMAIL_TABLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_2" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_TABLE">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PHONE" Type="int" Nullable="false" />
+          <Property Name="LOCATION_ID" Type="int" Nullable="false" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RATINGS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FLAG_1" Type="int" Nullable="false" />
+          <Property Name="FLAG_2" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ORDER_TABLE_PROMO_TABLE">
+          <End Role="PROMO_TABLE" Type="Self.PROMO_TABLE" Multiplicity="1" />
+          <End Role="ORDER_TABLE" Type="Self.ORDER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROMO_TABLE">
+              <PropertyRef Name="PROMO_ID" />
+            </Principal>
+            <Dependent Role="ORDER_TABLE">
+              <PropertyRef Name="PROMO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_TABLE_SERVICE_TABLE">
+          <End Role="SERVICE_TABLE" Type="Self.SERVICE_TABLE" Multiplicity="1" />
+          <End Role="ORDER_TABLE" Type="Self.ORDER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_TABLE">
+              <PropertyRef Name="SERVICE_ID" />
+            </Principal>
+            <Dependent Role="ORDER_TABLE">
+              <PropertyRef Name="SERVICE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_TABLE_TECHNICIAN_TABLE">
+          <End Role="TECHNICIAN_TABLE" Type="Self.TECHNICIAN_TABLE" Multiplicity="1" />
+          <End Role="ORDER_TABLE" Type="Self.ORDER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TECHNICIAN_TABLE">
+              <PropertyRef Name="TECHNICIAN_ID" />
+            </Principal>
+            <Dependent Role="ORDER_TABLE">
+              <PropertyRef Name="TECHNICIAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_TABLE_USER_TABLE">
+          <End Role="USER_TABLE" Type="Self.USER_TABLE" Multiplicity="1" />
+          <End Role="ORDER_TABLE" Type="Self.ORDER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_TABLE">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="ORDER_TABLE">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TECHNICIAN_TABLE_LOCATION_TABLE">
+          <End Role="LOCATION_TABLE" Type="Self.LOCATION_TABLE" Multiplicity="1" />
+          <End Role="TECHNICIAN_TABLE" Type="Self.TECHNICIAN_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATION_TABLE">
+              <PropertyRef Name="LOCATION_ID" />
+            </Principal>
+            <Dependent Role="TECHNICIAN_TABLE">
+              <PropertyRef Name="LOCATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TECHNICIAN_TABLE_SERVICE_TABLE">
+          <End Role="SERVICE_TABLE" Type="Self.SERVICE_TABLE" Multiplicity="1" />
+          <End Role="TECHNICIAN_TABLE" Type="Self.TECHNICIAN_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_TABLE">
+              <PropertyRef Name="SERVICE_ID" />
+            </Principal>
+            <Dependent Role="TECHNICIAN_TABLE">
+              <PropertyRef Name="SERVICE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_TABLE_LOCATION_TABLE">
+          <End Role="LOCATION_TABLE" Type="Self.LOCATION_TABLE" Multiplicity="1" />
+          <End Role="USER_TABLE" Type="Self.USER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATION_TABLE">
+              <PropertyRef Name="LOCATION_ID" />
+            </Principal>
+            <Dependent Role="USER_TABLE">
+              <PropertyRef Name="LOCATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HOMEUTILITYDATABASEModelStoreContainer">
+          <EntitySet Name="ADMIN_TABLE" EntityType="Self.ADMIN_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOCATION_TABLE" EntityType="Self.LOCATION_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGIN_TABLE" EntityType="Self.LOGIN_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDER_TABLE" EntityType="Self.ORDER_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROMO_TABLE" EntityType="Self.PROMO_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICE_TABLE" EntityType="Self.SERVICE_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TECHNICIAN_TABLE" EntityType="Self.TECHNICIAN_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USED_EMAIL_TABLE" EntityType="Self.USED_EMAIL_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_TABLE" EntityType="Self.USER_TABLE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ORDER_TABLE_PROMO_TABLE" Association="Self.FK_ORDER_TABLE_PROMO_TABLE">
+            <End Role="PROMO_TABLE" EntitySet="PROMO_TABLE" />
+            <End Role="ORDER_TABLE" EntitySet="ORDER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_TABLE_SERVICE_TABLE" Association="Self.FK_ORDER_TABLE_SERVICE_TABLE">
+            <End Role="SERVICE_TABLE" EntitySet="SERVICE_TABLE" />
+            <End Role="ORDER_TABLE" EntitySet="ORDER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_TABLE_TECHNICIAN_TABLE" Association="Self.FK_ORDER_TABLE_TECHNICIAN_TABLE">
+            <End Role="TECHNICIAN_TABLE" EntitySet="TECHNICIAN_TABLE" />
+            <End Role="ORDER_TABLE" EntitySet="ORDER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_TABLE_USER_TABLE" Association="Self.FK_ORDER_TABLE_USER_TABLE">
+            <End Role="USER_TABLE" EntitySet="USER_TABLE" />
+            <End Role="ORDER_TABLE" EntitySet="ORDER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TECHNICIAN_TABLE_LOCATION_TABLE" Association="Self.FK_TECHNICIAN_TABLE_LOCATION_TABLE">
+            <End Role="LOCATION_TABLE" EntitySet="LOCATION_TABLE" />
+            <End Role="TECHNICIAN_TABLE" EntitySet="TECHNICIAN_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TECHNICIAN_TABLE_SERVICE_TABLE" Association="Self.FK_TECHNICIAN_TABLE_SERVICE_TABLE">
+            <End Role="SERVICE_TABLE" EntitySet="SERVICE_TABLE" />
+            <End Role="TECHNICIAN_TABLE" EntitySet="TECHNICIAN_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_TABLE_LOCATION_TABLE" Association="Self.FK_USER_TABLE_LOCATION_TABLE">
+            <End Role="LOCATION_TABLE" EntitySet="LOCATION_TABLE" />
+            <End Role="USER_TABLE" EntitySet="USER_TABLE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HOMEUTILITYDATABASEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADMIN_TABLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLAG_1" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOCATION_TABLE">
+          <Key>
+            <PropertyRef Name="LOCATION_ID" />
+          </Key>
+          <Property Name="LOCATION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOCATION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLAG_1" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TECHNICIAN_TABLE" Relationship="Self.FK_TECHNICIAN_TABLE_LOCATION_TABLE" FromRole="LOCATION_TABLE" ToRole="TECHNICIAN_TABLE" />
+          <NavigationProperty Name="USER_TABLE" Relationship="Self.FK_USER_TABLE_LOCATION_TABLE" FromRole="LOCATION_TABLE" ToRole="USER_TABLE" />
+        </EntityType>
+        <EntityType Name="LOGIN_TABLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLAG_1" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORDER_TABLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TECHNICIAN_ID" Type="Int32" Nullable="false" />
+          <Property Name="USER_ID" Type="Int32" Nullable="false" />
+          <Property Name="SERVICE_ID" Type="Int32" Nullable="false" />
+          <Property Name="REQUESTED_TIME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FINISHED_TIME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WORKING_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROMO_ID" Type="Int32" Nullable="false" />
+          <Property Name="CALCULATED_WAGE" Type="Int32" Nullable="false" />
+          <Property Name="NET_WAGE" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_1" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_2" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLAG_4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PROMO_TABLE" Relationship="Self.FK_ORDER_TABLE_PROMO_TABLE" FromRole="ORDER_TABLE" ToRole="PROMO_TABLE" />
+          <NavigationProperty Name="SERVICE_TABLE" Relationship="Self.FK_ORDER_TABLE_SERVICE_TABLE" FromRole="ORDER_TABLE" ToRole="SERVICE_TABLE" />
+          <NavigationProperty Name="TECHNICIAN_TABLE" Relationship="Self.FK_ORDER_TABLE_TECHNICIAN_TABLE" FromRole="ORDER_TABLE" ToRole="TECHNICIAN_TABLE" />
+          <NavigationProperty Name="USER_TABLE" Relationship="Self.FK_ORDER_TABLE_USER_TABLE" FromRole="ORDER_TABLE" ToRole="USER_TABLE" />
+        </EntityType>
+        <EntityType Name="PROMO_TABLE">
+          <Key>
+            <PropertyRef Name="PROMO_ID" />
+          </Key>
+          <Property Name="PROMO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROMO_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DISCOUNT" Type="Int32" Nullable="false" />
+          <Property Name="PURPOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EXPIRED_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIMES" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLAG_1" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ORDER_TABLE" Relationship="Self.FK_ORDER_TABLE_PROMO_TABLE" FromRole="PROMO_TABLE" ToRole="ORDER_TABLE" />
+        </EntityType>
+        <EntityType Name="SERVICE_TABLE">
+          <Key>
+            <PropertyRef Name="SERVICE_ID" />
+          </Key>
+          <Property Name="SERVICE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERVICE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SERVICE_COST" Type="Int32" Nullable="false" />
+          <Property Name="DISCOUNT" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLAG_1" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ORDER_TABLE" Relationship="Self.FK_ORDER_TABLE_SERVICE_TABLE" FromRole="SERVICE_TABLE" ToRole="ORDER_TABLE" />
+          <NavigationProperty Name="TECHNICIAN_TABLE" Relationship="Self.FK_TECHNICIAN_TABLE_SERVICE_TABLE" FromRole="SERVICE_TABLE" ToRole="TECHNICIAN_TABLE" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TECHNICIAN_TABLE">
+          <Key>
+            <PropertyRef Name="TECHNICIAN_ID" />
+          </Key>
+          <Property Name="TECHNICIAN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SERVICE_ID" Type="Int32" Nullable="false" />
+          <Property Name="PHONE" Type="Int32" Nullable="false" />
+          <Property Name="RATINGS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WORKING_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOCATION_ID" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_1" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LOCATION_TABLE" Relationship="Self.FK_TECHNICIAN_TABLE_LOCATION_TABLE" FromRole="TECHNICIAN_TABLE" ToRole="LOCATION_TABLE" />
+          <NavigationProperty Name="ORDER_TABLE" Relationship="Self.FK_ORDER_TABLE_TECHNICIAN_TABLE" FromRole="TECHNICIAN_TABLE" ToRole="ORDER_TABLE" />
+          <NavigationProperty Name="SERVICE_TABLE" Relationship="Self.FK_TECHNICIAN_TABLE_SERVICE_TABLE" FromRole="TECHNICIAN_TABLE" ToRole="SERVICE_TABLE" />
+        </EntityType>
+        <EntityType Name="USER_TABLE">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PHONE" Type="Int32" Nullable="false" />
+          <Property Name="LOCATION_ID" Type="Int32" Nullable="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RATINGS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FLAG_1" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LOCATION_TABLE" Relationship="Self.FK_USER_TABLE_LOCATION_TABLE" FromRole="USER_TABLE" ToRole="LOCATION_TABLE" />
+          <NavigationProperty Name="ORDER_TABLE" Relationship="Self.FK_ORDER_TABLE_USER_TABLE" FromRole="USER_TABLE" ToRole="ORDER_TABLE" />
+        </EntityType>
+        <Association Name="FK_TECHNICIAN_TABLE_LOCATION_TABLE">
+          <End Role="LOCATION_TABLE" Type="Self.LOCATION_TABLE" Multiplicity="1" />
+          <End Role="TECHNICIAN_TABLE" Type="Self.TECHNICIAN_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATION_TABLE">
+              <PropertyRef Name="LOCATION_ID" />
+            </Principal>
+            <Dependent Role="TECHNICIAN_TABLE">
+              <PropertyRef Name="LOCATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_TABLE_LOCATION_TABLE">
+          <End Role="LOCATION_TABLE" Type="Self.LOCATION_TABLE" Multiplicity="1" />
+          <End Role="USER_TABLE" Type="Self.USER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATION_TABLE">
+              <PropertyRef Name="LOCATION_ID" />
+            </Principal>
+            <Dependent Role="USER_TABLE">
+              <PropertyRef Name="LOCATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_TABLE_PROMO_TABLE">
+          <End Role="PROMO_TABLE" Type="Self.PROMO_TABLE" Multiplicity="1" />
+          <End Role="ORDER_TABLE" Type="Self.ORDER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROMO_TABLE">
+              <PropertyRef Name="PROMO_ID" />
+            </Principal>
+            <Dependent Role="ORDER_TABLE">
+              <PropertyRef Name="PROMO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_TABLE_SERVICE_TABLE">
+          <End Role="SERVICE_TABLE" Type="Self.SERVICE_TABLE" Multiplicity="1" />
+          <End Role="ORDER_TABLE" Type="Self.ORDER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_TABLE">
+              <PropertyRef Name="SERVICE_ID" />
+            </Principal>
+            <Dependent Role="ORDER_TABLE">
+              <PropertyRef Name="SERVICE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_TABLE_TECHNICIAN_TABLE">
+          <End Role="TECHNICIAN_TABLE" Type="Self.TECHNICIAN_TABLE" Multiplicity="1" />
+          <End Role="ORDER_TABLE" Type="Self.ORDER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TECHNICIAN_TABLE">
+              <PropertyRef Name="TECHNICIAN_ID" />
+            </Principal>
+            <Dependent Role="ORDER_TABLE">
+              <PropertyRef Name="TECHNICIAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDER_TABLE_USER_TABLE">
+          <End Role="USER_TABLE" Type="Self.USER_TABLE" Multiplicity="1" />
+          <End Role="ORDER_TABLE" Type="Self.ORDER_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_TABLE">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="ORDER_TABLE">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TECHNICIAN_TABLE_SERVICE_TABLE">
+          <End Role="SERVICE_TABLE" Type="Self.SERVICE_TABLE" Multiplicity="1" />
+          <End Role="TECHNICIAN_TABLE" Type="Self.TECHNICIAN_TABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_TABLE">
+              <PropertyRef Name="SERVICE_ID" />
+            </Principal>
+            <Dependent Role="TECHNICIAN_TABLE">
+              <PropertyRef Name="SERVICE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HOMEUTILITYDATABASEEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMIN_TABLE" EntityType="Self.ADMIN_TABLE" />
+          <EntitySet Name="LOCATION_TABLE" EntityType="Self.LOCATION_TABLE" />
+          <EntitySet Name="LOGIN_TABLE" EntityType="Self.LOGIN_TABLE" />
+          <EntitySet Name="ORDER_TABLE" EntityType="Self.ORDER_TABLE" />
+          <EntitySet Name="PROMO_TABLE" EntityType="Self.PROMO_TABLE" />
+          <EntitySet Name="SERVICE_TABLE" EntityType="Self.SERVICE_TABLE" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TECHNICIAN_TABLE" EntityType="Self.TECHNICIAN_TABLE" />
+          <EntitySet Name="USER_TABLE" EntityType="Self.USER_TABLE" />
+          <AssociationSet Name="FK_TECHNICIAN_TABLE_LOCATION_TABLE" Association="Self.FK_TECHNICIAN_TABLE_LOCATION_TABLE">
+            <End Role="LOCATION_TABLE" EntitySet="LOCATION_TABLE" />
+            <End Role="TECHNICIAN_TABLE" EntitySet="TECHNICIAN_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_TABLE_LOCATION_TABLE" Association="Self.FK_USER_TABLE_LOCATION_TABLE">
+            <End Role="LOCATION_TABLE" EntitySet="LOCATION_TABLE" />
+            <End Role="USER_TABLE" EntitySet="USER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_TABLE_PROMO_TABLE" Association="Self.FK_ORDER_TABLE_PROMO_TABLE">
+            <End Role="PROMO_TABLE" EntitySet="PROMO_TABLE" />
+            <End Role="ORDER_TABLE" EntitySet="ORDER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_TABLE_SERVICE_TABLE" Association="Self.FK_ORDER_TABLE_SERVICE_TABLE">
+            <End Role="SERVICE_TABLE" EntitySet="SERVICE_TABLE" />
+            <End Role="ORDER_TABLE" EntitySet="ORDER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_TABLE_TECHNICIAN_TABLE" Association="Self.FK_ORDER_TABLE_TECHNICIAN_TABLE">
+            <End Role="TECHNICIAN_TABLE" EntitySet="TECHNICIAN_TABLE" />
+            <End Role="ORDER_TABLE" EntitySet="ORDER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDER_TABLE_USER_TABLE" Association="Self.FK_ORDER_TABLE_USER_TABLE">
+            <End Role="USER_TABLE" EntitySet="USER_TABLE" />
+            <End Role="ORDER_TABLE" EntitySet="ORDER_TABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TECHNICIAN_TABLE_SERVICE_TABLE" Association="Self.FK_TECHNICIAN_TABLE_SERVICE_TABLE">
+            <End Role="SERVICE_TABLE" EntitySet="SERVICE_TABLE" />
+            <End Role="TECHNICIAN_TABLE" EntitySet="TECHNICIAN_TABLE" />
+          </AssociationSet>
+          <EntitySet Name="USED_EMAIL_TABLE" EntityType="HOMEUTILITYDATABASEModel.USED_EMAIL_TABLE" />
+        </EntityContainer>
+        <EntityType Name="USED_EMAIL_TABLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FLAG_1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FLAG_2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HOMEUTILITYDATABASEModelStoreContainer" CdmEntityContainer="HOMEUTILITYDATABASEEntities1">
+          <EntitySetMapping Name="ADMIN_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.ADMIN_TABLE">
+              <MappingFragment StoreEntitySet="ADMIN_TABLE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOCATION_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.LOCATION_TABLE">
+              <MappingFragment StoreEntitySet="LOCATION_TABLE">
+                <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+                <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGIN_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.LOGIN_TABLE">
+              <MappingFragment StoreEntitySet="LOGIN_TABLE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.ORDER_TABLE">
+              <MappingFragment StoreEntitySet="ORDER_TABLE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TECHNICIAN_ID" ColumnName="TECHNICIAN_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="SERVICE_ID" ColumnName="SERVICE_ID" />
+                <ScalarProperty Name="REQUESTED_TIME" ColumnName="REQUESTED_TIME" />
+                <ScalarProperty Name="FINISHED_TIME" ColumnName="FINISHED_TIME" />
+                <ScalarProperty Name="WORKING_STATUS" ColumnName="WORKING_STATUS" />
+                <ScalarProperty Name="PROMO_ID" ColumnName="PROMO_ID" />
+                <ScalarProperty Name="CALCULATED_WAGE" ColumnName="CALCULATED_WAGE" />
+                <ScalarProperty Name="NET_WAGE" ColumnName="NET_WAGE" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+                <ScalarProperty Name="FLAG_3" ColumnName="FLAG_3" />
+                <ScalarProperty Name="FLAG_4" ColumnName="FLAG_4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROMO_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.PROMO_TABLE">
+              <MappingFragment StoreEntitySet="PROMO_TABLE">
+                <ScalarProperty Name="PROMO_ID" ColumnName="PROMO_ID" />
+                <ScalarProperty Name="PROMO_NAME" ColumnName="PROMO_NAME" />
+                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+                <ScalarProperty Name="PURPOSE" ColumnName="PURPOSE" />
+                <ScalarProperty Name="EXPIRED_DATE" ColumnName="EXPIRED_DATE" />
+                <ScalarProperty Name="TIMES" ColumnName="TIMES" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICE_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.SERVICE_TABLE">
+              <MappingFragment StoreEntitySet="SERVICE_TABLE">
+                <ScalarProperty Name="SERVICE_ID" ColumnName="SERVICE_ID" />
+                <ScalarProperty Name="SERVICE_NAME" ColumnName="SERVICE_NAME" />
+                <ScalarProperty Name="SERVICE_COST" ColumnName="SERVICE_COST" />
+                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TECHNICIAN_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.TECHNICIAN_TABLE">
+              <MappingFragment StoreEntitySet="TECHNICIAN_TABLE">
+                <ScalarProperty Name="TECHNICIAN_ID" ColumnName="TECHNICIAN_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="SERVICE_ID" ColumnName="SERVICE_ID" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="RATINGS" ColumnName="RATINGS" />
+                <ScalarProperty Name="WORKING_STATUS" ColumnName="WORKING_STATUS" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.USER_TABLE">
+              <MappingFragment StoreEntitySet="USER_TABLE">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="RATINGS" ColumnName="RATINGS" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USED_EMAIL_TABLE">
+            <EntityTypeMapping TypeName="HOMEUTILITYDATABASEModel.USED_EMAIL_TABLE">
+              <MappingFragment StoreEntitySet="USED_EMAIL_TABLE">
+                <ScalarProperty Name="FLAG_2" ColumnName="FLAG_2" />
+                <ScalarProperty Name="FLAG_1" ColumnName="FLAG_1" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

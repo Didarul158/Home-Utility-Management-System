@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewBag.Title = "WorkingTech";
+}
+
+<h2>@ViewBag.WoreDone</h2>
+<input type="button" value="Great Work" class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("ServicePaid", "User",new { id = @ViewBag.serviceId })'" />
+
